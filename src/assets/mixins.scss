@@ -1,0 +1,53 @@
+@mixin btn-primary {
+  background-color: $color-green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  padding: 19px;
+  cursor: pointer;
+}
+
+@mixin btn-compare {
+  background-color: $color-translucent-green;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+
+  &:hover::before {
+    content: 'Сравнить';
+    position: absolute;
+    top: -42px;
+    left: -30px;
+    width: 88px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 2px 0px 12px #ccc;
+  }
+
+  &:hover::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #FFFFFF;
+  }
+}
