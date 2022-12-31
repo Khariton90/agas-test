@@ -1,6 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  publicPath: '/agas-cloud/',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/agas-test/'
+    : '/',
   transpileDependencies: true, 
   css: {
     loaderOptions: {
